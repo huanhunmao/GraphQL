@@ -8,5 +8,8 @@ module.exports = {
         productsByPrice: (_, args) => productsModel.filterProductsByPrice(args.min, args.max),
 
         productsById: (_, args)=> productsModel.filterProductsById(args.id),
+    },
+    Mutation: {
+        addNewProduct: (_, args) => productsModel.addNewProducts(args.id, args.description, args.price)
     }
 }
