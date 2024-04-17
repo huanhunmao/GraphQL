@@ -10,7 +10,19 @@ const typeArray = loadFilesSync('**/*', {
     extensions: ['graphql'],
 })
 const schema = makeExecutableSchema({
-    typeDefs: typeArray
+    typeDefs: typeArray,
+    resolvers: {
+        Query:{
+            products: async (parent, args, context, info) => {
+                const product = await Promise.resolve(parent.products)
+                return product
+            },
+            orders: async parent => {
+                const order = await Promise.resolve(parent.orders)
+                return order
+            }
+        }
+    }
 })
 
 const root = {
