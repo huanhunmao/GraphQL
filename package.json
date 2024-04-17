@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon server.js",
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/huanhunmao/GraphQL#readme",
   "dependencies": {
+    "@graphql-tools/load-files": "^7.0.0",
+    "@graphql-tools/schema": "^10.0.3",
     "express": "^4.19.2",
     "express-graphql": "^0.12.0",
     "graphql": "^16.8.1"
