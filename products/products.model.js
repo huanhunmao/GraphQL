@@ -39,10 +39,30 @@ function addNewProducts(id, description, price){
 
     return newProduct
 }
+
+function getProductById(id){
+    return products.find(product => product.id === id)
+}
+
+function addNewProductReviews(id, rating, comment){
+    const matchedProduct = getProductById(id)
+
+    if(matchedProduct){
+        const newProductReview = {
+            rating,
+            comment
+        }
+
+        matchedProduct.reviews.push(newProductReview)
+
+        return newProductReview
+    }
+}
     
 module.exports = {
     getAllProducts,
     filterProductsByPrice,
     filterProductsById,
-    addNewProducts
+    addNewProducts,
+    addNewProductReviews
 }

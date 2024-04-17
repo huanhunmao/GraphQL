@@ -10,6 +10,8 @@ module.exports = {
         productsById: (_, args)=> productsModel.filterProductsById(args.id),
     },
     Mutation: {
-        addNewProduct: (_, args) => productsModel.addNewProducts(args.id, args.description, args.price)
+        addNewProduct: (_, args) => productsModel.addNewProducts(args.id, args.description, args.price),
+
+        addNewProductReview: (_, args) => productsModel.addNewProductReviews(args.id, args.rating, args.comment)
     }
 }

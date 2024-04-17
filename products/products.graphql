@@ -6,6 +6,7 @@
 
     type Mutation{
         addNewProduct(id: ID!, description: String!, price: Float!):Product
+        addNewProductReview(id: ID!, rating: String!, comment: String!):Review
     }
 
     type Product{
