@@ -5,7 +5,8 @@ module.exports = {
         products: () => {
             return productsModel.getAllProducts()
         },
-        productsByPrice: (_, args) => 
-            productsModel.filterProductsByPrice(args.min, args.max)
+        productsByPrice: (_, args) => productsModel.filterProductsByPrice(args.min, args.max),
+
+        productsById: (_, args)=> productsModel.filterProductsById(args.id),
     }
 }
